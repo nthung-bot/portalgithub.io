@@ -44,6 +44,8 @@
             --brand-discord-glow: rgba(88, 101, 242, 0.6);
             --brand-spotify: #1DB954;
             --brand-spotify-glow: rgba(29, 185, 84, 0.6);
+            --brand-github: #ffffff;
+            --brand-github-glow: rgba(255, 255, 255, 0.4);
             
             /* Structural Variables */
             --card-width: 340px;
@@ -320,7 +322,7 @@
         }
 
         /* ==========================================================================
-           7. CONNECTIONS (DISCORD & SPOTIFY)
+           7. CONNECTIONS (DISCORD, SPOTIFY, GITHUB)
            ========================================================================== */
         
         .connections-wrapper {
@@ -435,6 +437,28 @@
         }
 
         .btn-spotify:hover::before {
+            transform: translateX(100%);
+        }
+
+        /* GitHub Button Specifics */
+        .btn-github:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1),
+                        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-github:hover .btn-icon {
+            color: var(--brand-github);
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        .btn-github:hover .btn-text {
+            color: #ffffff;
+        }
+
+        .btn-github:hover::before {
             transform: translateX(100%);
         }
 
@@ -557,6 +581,13 @@
                     </div>
                     <div class="btn-text">Spotify</div>
                 </a>
+
+                <a href="#" target="_blank" class="btn-connection btn-github" id="btn-github">
+                    <div class="btn-icon">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="btn-text">GitHub</div>
+                </a>
             </section>
 
         </article>
@@ -573,6 +604,7 @@
         // Social URLs mapping
         const discordURL = "https://discord.gg/HSv5EQbUR2";
         const spotifyURL = "https://open.spotify.com/user/31y4kkefxbpwdybenp22os3ur75m";
+        const githubURL = "https://github.com/PortalGuy"; // <-- Add your GitHub URL here
         
         // Discord User ID for Lanyard API (Real-time Status)
         // If left empty or invalid, the script will mock an online status after a delay.
@@ -583,6 +615,7 @@
          */
         document.getElementById('btn-discord').href = discordURL;
         document.getElementById('btn-spotify').href = spotifyURL;
+        document.getElementById('btn-github').href = githubURL; // <-- Connect GitHub link to button
 
 
         /**
